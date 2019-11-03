@@ -1,0 +1,53 @@
+#include<iostream>
+
+using namespace std;
+
+struct l
+
+{
+
+    int a,b;
+
+}c[10000];
+
+int pd(const l & g,const l & h)
+
+{
+
+    return g.a<h.a;
+
+}
+
+int main()
+
+{
+
+    int n;
+
+    double d=0,e=0;
+
+    cin>>n;
+
+    for(int i=0;i<n;i++)
+
+    {cin>>c[i].a;c[i].b=i+1;}
+
+    sort(c,c+n,pd);
+
+    for(int i=0;i<n;i++)
+
+    cout<<c[i].b<<" ";
+
+    cout<<endl;
+
+    for(int i=0;i<n;i++)
+
+    e=e+c[i].a*(n-i-1);
+
+    e=e/n;
+
+    printf("%0.2f",e);
+
+    return 0;
+
+}
